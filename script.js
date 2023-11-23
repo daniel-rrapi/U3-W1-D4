@@ -52,7 +52,10 @@ var ClothesClass = /** @class */ (function () {
         return (this.prezzoIvaInclusa * this.saldo) / 100;
     };
     ClothesClass.prototype.getAcquistoCapo = function () {
-        return this.prezzoIvaInclusa - this.getSaldoCapo();
+        var saldoIncompleto = this.prezzoIvaInclusa - this.getSaldoCapo();
+        var saldoIncompletoStr = saldoIncompleto.toFixed(2);
+        var saldoFinale = parseFloat(saldoIncompletoStr);
+        return saldoFinale;
     };
     return ClothesClass;
 }());

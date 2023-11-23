@@ -29,7 +29,10 @@ class ClothesClass {
     }
 
     getAcquistoCapo(): number {
-        return this.prezzoIvaInclusa - this.getSaldoCapo()
+        let saldoIncompleto: number = this.prezzoIvaInclusa - this.getSaldoCapo()
+        let saldoIncompletoStr: string = saldoIncompleto.toFixed(2);
+        let saldoFinale: number = parseFloat(saldoIncompletoStr);
+        return saldoFinale
     }
 
 }
